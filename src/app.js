@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view egine', 'ejs');
 // conexion a BD
-mongoose.connect('mongodb+srv://Miguel_Angel:eNMcLT5zdwIJMhvZ@cluster0.xmeotak.mongodb.net/Datos?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://Miguel_Angel:eNMcLT5zdwIJMhvZ@cluster0.xmeotak.mongodb.net/Proyect?retryWrites=true&w=majority')
 .then(bd => console.log('BD se conectó')).catch(err =>console.log(err));
 
 //middleware
