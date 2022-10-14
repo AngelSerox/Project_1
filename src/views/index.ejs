@@ -34,6 +34,33 @@
                     </div>
                     <button class="btn btn-primary">Registrar</button>
                 </form>
+                <div class="col-md-5">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Instrumento</th>
+                                <th>Modelo</th>
+                                <th>Tipo</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i < valores.length; i++){  %>
+                                <tr>
+                                    <td><%= i+1  %></td>
+                                    <td><%= valores[i].Instrumento  %></td>
+                                    <td><%= valores[i].Modelo  %></td>
+                                    <td><%= valores[i].Tipo  %></td>
+                                    <td><%= valores[i].Cantidad  %></td>
+                                    <td><%= valores[i].Precio  %></td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+        
+                    </table>
+                </div>
                </div>
            </div>
         </div>
