@@ -16,21 +16,21 @@
         <div class="col-md-5">
            <div class="card">
                <div class="card-body">
-                   <form action="/add" method="POST">
+                   <form action="/update/ <%= data._id %>" method="POST">
                     <div class="form-group">
-                        <input type="text" name="Instrumento" placeholder="Instrumento Musical" class="form-control" >
+                        <input type="text" name="Instrumento" placeholder="Instrumento Musical" class="form-control" value="<%= data.Instrumento %>">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Modelo" placeholder="Modelo" class="form-control">
+                        <input type="text" name="Modelo" placeholder="Modelo" class="form-control"value="<%= data.Modelo %> ">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Tipo" placeholder="tipo de Instrumento" class="form-control">
+                        <input type="text" name="Tipo" placeholder="tipo de Instrumento" class="form-control"value="<%= data.Tipo %> ">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Cantidad" placeholder="Cantidad" class="form-control">
+                        <input type="text" name="Cantidad" placeholder="Cantidad" class="form-control"value="<%= data.Cantidad %> ">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Precio" placeholder="Precio $" class="form-control">
+                        <input type="text" name="Precio" placeholder="Precio $" class="form-control"value="<%= data.Precio %>">
                     </div>
                     <button class="btn btn-primary">Registrar</button>
                 <form>
@@ -58,7 +58,7 @@
                                     <td><%= valores[i].Precio  %></td>
                                     <td>
                                         <a href="/del/<%=valores[i].id%>">Borrar</a>
-                                        <a href="/edit/<%=valores[i].id%>">Actualizar</a>
+                                        <a href="/update/<%=valores[i].id%>">Actualizar</a>
                                     </td>
                                 </tr>
                             <% } %>

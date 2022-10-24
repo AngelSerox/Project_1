@@ -24,29 +24,21 @@ router.get('/del/:id', async (req, res) => {
     res.redirect('/');
 });
 
-router.put('/update/:id', async (req, res) => {
-    const id = req.params.id;
-    const body = req.body;
-
-    console.log(id)
-    console.log('body', body)
-
-    try {
-        const valor = await Valor.findByIdAndUpdate(
-            id, body, { useFindAndModify: false }
-        )
-        console.log(Proyect)
-        res.json({
-            estado: true,
-            mensaje: 'Mascota editada'
-        })
-    } catch (error) {
-        console.log(error)
-        res.json({
-            estado: false,
-            mensaje: 'Mascota falla'
-        })
+router.get('/edit/:id', async(req, res) =>{
+    try{
+        const data = await Valor.findById(req.params.id).lean();
+        const dato = await Valor.find();
+        console.log(data);
+        res.render('edit.ejs',{data, dato});
+    }catch (error){
+        console.log(error.message);
     }
+});
+
+router.post('/update/:id', async(req, res) => {
+    const {id} = req.params;
+    await Valor.findByIdAndUpdate(id, req.body);
+    res.redirect('/');
 });
 
 module.exports = router;
