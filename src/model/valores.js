@@ -9,7 +9,7 @@ const Valor = new Schema({
     Cantidad: String,
     Precio: String
 }); 
-module.exports =mongoose.model('Info', Valor);
+module.exports =mongoose.model('infos', Valor);
 
 
 
